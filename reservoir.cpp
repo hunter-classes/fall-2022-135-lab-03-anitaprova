@@ -63,3 +63,35 @@ double get_min_east()
 		return 0;
 }
 
+double get_max_east()
+{
+	std::ifstream fin("Current_Reservoir_Levels.tsv");
+	if (fin.fail()) {
+		std::cerr << "File cannot be opened for reading." << std::endl;
+		exit(1);
+	}
+		double eastSt, max;
+		std::string date;
+		int index = 0;
+
+		std::string junk = "";
+		getline(fin, junk);
+
+		while(fin >> date >> eastSt) {
+			fin.ignore(INT_MAX, '\n');
+			if (index == 0)
+			{
+				max = eastSt;
+				index++;
+			}
+			
+			if (eastSt > min)
+			{
+				max = eastSt;
+			}
+		}
+		
+		std::cout << "Minimum storage in East basin: " << min << " billion gallons" << std::endl;
+		return 0;
+}
+
