@@ -13,7 +13,7 @@ double get_east_storage(std::string date)
 		exit(1);
 	}
 
-	double  eastSt;
+	double eastSt;
 	std::string d = date;
 	std::string junk = "";
 	getline(fin, junk);
@@ -38,16 +38,23 @@ double get_min_east()
 		std::cerr << "File cannot be opened for reading." << std::endl;
 		exit(1);
 	}
-		double date, eastSt, min;
-		
+		double eastSt, min;
+		std::string date;
+		int index = 0;
+
 		std::string junk = "";
 		getline(fin, junk);
 
 		while(fin >> date >> eastSt) {
 			fin.ignore(INT_MAX, '\n');
+			if (index == 0)
+			{
+				min = eastSt;
+				index++;
+			}
+			
 			if (eastSt < min)
 			{
-				std::cout << min;
 				min = eastSt;
 			}
 		}
@@ -56,21 +63,3 @@ double get_min_east()
 		return 0;
 }
 
-double get_max_east()
-{
-	std::ifstream fin("Current_Reservoir_Levels.tsv");
-        if (fin.fail()) {
-		std::cerr << "File cannot be opened for reading." << std::endl;
-		exit(1);
-	}
-		double date, eastSt, min;
-
-		std::string junk = "";
-		getline(fin, junk);
-
-		while(fin >> date >> eastSt) {
-			fin.ignore(INT_MAX, '\n');
-			if (eastSt > min){													min = eastSt;															}
-		}
-													                		std::cout << "Minimum storage in East basin: " << min << " billion gallons" << std::endl;																                return 0;
-}
