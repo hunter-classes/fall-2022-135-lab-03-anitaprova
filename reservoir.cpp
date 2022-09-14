@@ -85,13 +85,13 @@ double get_max_east()
 				index++;
 			}
 			
-			if (eastSt > min)
+			if (eastSt > max)
 			{
 				max = eastSt;
 			}
 		}
 		
-		std::cout << "Minimum storage in East basin: " << min << " billion gallons" << std::endl;
+		std::cout << "Maximum storage in East basin: " << max << " billion gallons" << std::endl;
 		return 0;
 }
 
