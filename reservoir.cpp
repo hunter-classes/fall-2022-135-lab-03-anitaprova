@@ -121,15 +121,17 @@ std::string compare_basins(std::string date)
 
 	if (eastEl > westEl)
 	{
-		std::cout << "East"; 
+		std::cout << "East" << std::endl; 
 	}
 	else if (eastEl < westEl)
 	{
-		std::cout << "West";
+		std::cout << "West" << std::endl;
 	}
 	else
 	{
-		std::cout << "Equal";
+		std::cout << "Equal" << std::endl;
 	}
+
+	return "";
 
 }
