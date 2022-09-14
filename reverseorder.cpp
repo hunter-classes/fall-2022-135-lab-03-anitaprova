@@ -18,16 +18,6 @@ void reverse_order(std::string date1, std::string date2)
 	int size = sizeof(west_elevation)/sizeof(west_elevation[0]);
 	std::string date[364];
 
-	/*std::string date1_month = date1.substr(0, 1);
-	std::string date1_day = date1.substr(3, 4);
-	std::string date1_year = date1.substr(6, 9);
-
-	std::string date2_month = date2.substr(0, 1);
-	std::string date2_day = date2.substr(3, 4);
-	std::string date2_year = date2.substr(6, 9);
-
-	int num_days = 
-*/
 	std::string d1 = date1;
 	std::string d2 = date2;
 
